@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Kohli - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            background: #121212;
+            color: #fff;
+            font-size: 18px;
+            transition: background 0.5s ease-in-out;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: black;
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+        }
+        nav {
+            background: rgba(34, 34, 34, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 20px;
+            backdrop-filter: blur(10px);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 25px;
+        }
+        nav ul li a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: white;
+        }
+        section {
+            max-width: 900px;
+            margin: 120px auto 50px;
+            padding: 40px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            transition: all 0.5s ease-in-out;
+        }
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill-card {
+            background: #333;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #FFD700;
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 18px;
+            margin-top: 30px;
+        }
+        #about img {
+            display: block;
+            margin: 0 auto 25px;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid #FFD700;
+            transition: transform 0.3s ease-in-out;
+        }
+        #about img:hover {
+            transform: scale(1.1);
+        }
+        .email-link {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        .email-link:hover {
+            color: white;
+        }
+        .linkedin-icon {
+    display: block;
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+.contact-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.linkedin {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .linkedin a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .linkedin img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+.linkedin-icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: brightness(0) invert(1); /* Matches theme by making it gold */
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjusts for fixed navbar */
+}
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+#backToTop:hover {
+    background: white;
+    color: #000;
+}
+
+    </style>
+</head>
+<body>
+    <button id="backToTop">↑ Top</button>
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+    
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+    
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    
+    <header>
+        <h1>Yash Kohli</h1>
+        <p>Data Analyst / Marketing</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="Yash.jpg" alt="Yash Kohli">
+        <p align="center">Passionate about technology and innovation, striving to make an impact with my skills.</p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">HTML & CSS</div>
+            <div class="skill-card">Data Analytics</div>
+            <div class="skill-card">SQL / PostgreSQL</div>
+            <div class="skill-card">Excel</div>
+            <div class="skill-card">OOPS</div>
+            <div class="skill-card">Apollo</div>
+            <div class="skill-card">Hubspot</div>
+            <div class="skill-card">CMS</div>
+            <div class="skill-card">Framer</div>
+        </div>
+    </section>
+    <section id="resume">
+        <h2>Resume</h2>
+        <p align="center">Download my resume <a href="Yash Kohli[1].pdf" class="email-link" download>here</a>.</p>
+    </section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <p><b>EventHQ (Jan 2024 – Sep 2024)</b></p><br>
+            <p><b><u>Social Media and Content Creation:</u></b></p>
+            <li>Created social media posts to promote events on LinkedIn and Twitter, driving engagement and audience outreach.</li><br>
+            <li>Wrote and published blogs on the website, contributing to SEO and thought leadership.</li><br>
+            <li>Designed support articles and assisted in onboarding new customers onto the EventHQ tool.</li><br>
+            <li>Developed product videos, demo videos, and visually appealing content on Canva.</li><br>
+            <p><b><u>Website and CMS Management:</u></b></p> 
+            <li>Managed the website layout and blog CMS using Framer to ensure a seamless user experience.</li><br>
+            <p><b><u>Customer Insights and Product Development:</u></b></p>
+            <li>Conducted outbound calls with agencies to understand their requirements and onboard them.</li><br>
+            <li>Enriched data and scheduled interviews with event marketers to gather insights on their pain points.</li><br>
+            <li>Collaborated with the product team to implement solutions addressing customer challenges.</li><br>
+            <p><b><u>Event Management:</u></b></p> 
+            <li>Organized and executed marketing meetups, managing registration, email campaigns, social media promotion, and day-of-event logistics.</li><br>
+            <li>Core team member of SaaS Insider for 2 flagship conferences DEVCON24 and SAASCON24.</li>
+        </ul>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>B.Tech CSE - SRM University - 9 CGPA (2020 - 2024)</li><br>
+            <li>12th - Boston Public School (2019 - 2020)</li><br>
+            <li>10th - St. Clare's Sen Sec School (2017 - 2018)</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/kohliyash03/" target="_blank">
+                <img class="linkedin-icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            </a>
+        </div>
+            </a>
+        </div>
+            </a>
+        </div>
+        <p>Email: <a class="email-link" href="mailto:kohliyash03@gmail.com">kohliyash03@gmail.com</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Yash Kohli. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
